@@ -6,7 +6,7 @@ Register Page
 {% block content %}
 <body class="text-center">
     <div class="container">
-        <form method="POST" class="form-register" style="color:white">
+        <form method="POST" class="form-register" style="color:gray">
             {{ form.hidden_tag() }}
             <img class="mb-4" src="" alt="">
             <h1 class="h3 mb-3 font-weight-normal">
@@ -28,6 +28,11 @@ Register Page
             {{ form.Admin_key.label() }}
             {{ form.Admin_key(class="form-control", placeholder="Admin Key") }}
 
+
+            <div class="checkbox mb-3">
+               <h6>already have an acount ?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Sign in</a>
+            </div>
 
             <br>
 
