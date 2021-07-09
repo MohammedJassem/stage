@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-DeleteAdmin" style="color:gray">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Enter the name to delete
+            </h1>
+            <br>
+            {{ form.name.label() }}
+            {{ form.name(class="form-control", placeholder=" Name") }}
+
+
+
+            <div class="checkbox mb-3">
+            </div>
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to water leak detection page
+{% endblock %}
+{% block content %}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col"><a class="btn btn-primary" href="{{ url_for('Register') }}">Add Admin</a></th>
+                <th scope="col"><a class="btn btn-primary" href="{{ url_for('DeleteAdmin') }}">delete Admin</a</th>
+                <th scope="col"> <a class="btn btn-primary" href="{{ url_for('Register') }}">Add User</a></th>
+                <th scope="col"><a class="btn btn-primary" href="{{ url_for('DeleteAdmin') }}">Delete User</a></th>
+                <th scope="col"><a class="btn btn-primary" href="{{ url_for('AddSensor') }}">Add Sensor</a></th>
+                <th scope="col"><a class="btn btn-primary" href="{{ url_for('DeleteSensor') }}">Delete Sensor</a></th>
+                <th scope="col"><a class="btn btn-primary" href="{{ url_for('UpdateSensor') }}">Update Sensor</a></th>
+
+            </tr>
+        </thead>
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">Water leak detection</h1>
+            <p class="lead font-weight-normal"></p>
+            <table class="table table-hover table-dark">
+  
+        
+            </div>
+        
+        </div>
+
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+<table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">node ID</th>
+                <th scope="col">soil moisture(%)</th>
+                <th scope="col">Status</th>
+                <th scope="col">time</th>
+                <th scope="col">location</th>
+                <th scope="col">Graphic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.soil_moisture }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>{{ item.time }}</td>
+                    <td>{{ item.sensor_location }}</td>
+                <th scope="col"><a class="btn btn-primary" href="{}">graph {{ item.id }} </a></th>
+
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}

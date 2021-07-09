@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-UpdateSensor" style="color:gray">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Update the new Sensor
+            </h1>
+            <br>
+            {{ form.id_.label() }}
+            {{ form.id_(class="form-control", placeholder=" id") }}
+
+            
+            {{ form.sensor_location.label() }}
+            {{ form.sensor_location(class="form-control", placeholder="sensor location") }}
+
+            <div class="checkbox mb-3">
+            </div>
+
+            <br>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}

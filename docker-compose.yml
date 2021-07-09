@@ -1,0 +1,36 @@
+    version: "3.3"
+
+    services:
+        flask:
+            build: ./flask
+            container_name: flask
+            environment:
+                - APP_NAME=MyFlaskApp
+            depends_on:
+                - "database"
+                - "redis"
+            expose:
+                - 8080
+
+    
+        nginx:
+            build: ./nginx
+            container_name: nginx
+            ports: 
+                - "8092:80"
+            depends_on:
+                - "flask"
+                
+    
+        database:
+            build: ./cassandra
+            container_name: cassandra
+            ports:
+                - "9042:9042"
+                - "7199:7199"
+    
+        redis:
+            image: redis:latest
+            container_name: redis
+            expose:
+                - 6379
